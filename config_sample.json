@@ -1,0 +1,21 @@
+{
+    "data_path": "/home/eric/Datasets",
+    "epochs": 10,
+    "batch_size": 128,
+    "device": "cuda",
+    "save_path": "/home/eric/PycharmProjects/didactic_sanity_check/model_saves/experiment_1/model1",
+    "l_r": 0.001,
+
+    "model": "model1",
+
+    "didactic": true,
+    "noise": false,
+    "false_didactic": false,
+    "unique_didactic": false,
+    "padding": 9,
+
+
+    "num_workers": 2,
+    "pin_memory": true,
+    "shuffle": true
+}
