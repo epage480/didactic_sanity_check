@@ -14,6 +14,7 @@ import dataset_MNIST
 
 from model1 import model1
 from model2 import model2
+from model3 import model3
 
 
 def train(model, device, train_loader, optimizer, epoch, writer, verbose=False):

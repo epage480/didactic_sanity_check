@@ -6,7 +6,7 @@
     "save_path": "/home/eric/PycharmProjects/didactic_sanity_check/model_saves/experiment_1/model1",
     "l_r": 0.001,
 
-    "model": "model1",
+    "model": "model2",
 
     "didactic": true,
     "noise": false,

@@ -7,22 +7,22 @@ import numpy as np
 # This model is meant to be the same used in this paper: https://arxiv.org/abs/1711.00867
 # It consists of 26,914,826 parameters and may be incorrect, but it does obtain the accuracy of 98.4% as described
 # in the paper, consider emailing the authors to elaborate on their architecture
-class model2(torch.nn.Module):
+class model3(torch.nn.Module):
     def __init__(self, input_shape=(1,28,28), classes=10):
-        super(model2, self).__init__()
-        self.conv1 = torch.nn.Conv2d(input_shape[0], 32, kernel_size=3, stride=1, padding=0)
-        self.conv2 = torch.nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=0)
-        self.conv3 = torch.nn.Conv2d(64, 64, kernel_size=3, stride=1, padding=0)
-        self.classifier = torch.nn.Linear(4096, classes)
+        super(model3, self).__init__()
+        self.conv1 = torch.nn.Conv2d(input_shape[0], 1024, kernel_size=3, stride=1, padding=0)
+        self.conv2 = torch.nn.Conv2d(1024, 1024, kernel_size=3, stride=1, padding=0)
+        self.conv3 = torch.nn.Conv2d(1024, 1024, kernel_size=3, stride=1, padding=0)
+        self.classifier = torch.nn.Linear(802816, classes)
 
     def forward(self, x):
         x = F.relu(self.conv1(x))
-        x = F.max_pool2d(x, 2)
-        x = F.relu(self.conv2(x))
-        x = F.max_pool2d(x, 2)
-        x = F.relu(self.conv3(x))
-        x = torch.flatten(x, 1)
         print(x.shape)
+        x = F.relu(self.conv2(x))
+        print(x.shape)
+        x = F.relu(self.conv3(x))
+        print(x.shape)
+        x = torch.flatten(x, 1)
         x = F.log_softmax(self.classifier(x), dim=1)
         return(x)
 
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     test_loader = torch.utils.data.DataLoader(test_data, batch_size=128,
                                 num_workers=1, pin_memory=True, shuffle=True)
 
-    model = model2().to(device)
+    model = model3().to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=.001)
 
     for epoch in range(1):
