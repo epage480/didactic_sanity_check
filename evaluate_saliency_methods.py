@@ -99,7 +99,7 @@ def main(config_file):
 
     # Create figure, rows = # of samples, cols = # of XAI tests + 1
     N = 4
-    seed = 42
+    seed = args.seed
     fig, ax = plt.subplots(nrows=N, ncols=6, figsize=(16, 12))
     np.random.seed(seed)
     for i in range(N):
@@ -145,19 +145,19 @@ def main(config_file):
         im = ax[i, 5].imshow(format_img(attr_result))
         plt.colorbar(im, ax=ax[i, 5])
 
-    ax[0, 1].set_title('gradient', rotation=45)
-    ax[0, 2].set_title('smoothgrad', rotation=45)
-    ax[0, 3].set_title('lrp', rotation=45)
-    ax[0, 4].set_title('ig', rotation=45)
+    ax[0, 2].set_title('gradient', rotation=45)
+    ax[0, 3].set_title('smoothgrad', rotation=45)
+    ax[0, 4].set_title('lrp', rotation=45)
+    ax[0, 5].set_title('ig', rotation=45)
 
     fig.tight_layout()
-    plt.savefig(os.path.join(config_dict['save_path'], 'evaluations.png'))
-    plt.show()
+    plt.savefig(os.path.join(config_dict['save_path'], 'evaluations_{}.png'.format(args.seed)))
+    # plt.show()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Perform model training.')
     parser.add_argument('-config_file', help='path to the configuration file (.json)')
-    parser.add_argument('-model_path', help='path to the model to evaluate')
+    parser.add_argument('-seed', default=42, help="random seed to determine which samples to use")
     args = parser.parse_args()
 
     main(args.config_file)

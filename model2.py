@@ -22,7 +22,6 @@ class model2(torch.nn.Module):
         x = F.max_pool2d(x, 2)
         x = F.relu(self.conv3(x))
         x = torch.flatten(x, 1)
-        print(x.shape)
         x = F.log_softmax(self.classifier(x), dim=1)
         return(x)
 
