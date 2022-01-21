@@ -75,7 +75,7 @@ def main(config_file):
 
     # Create directory for model & other files based on time ran
     time_now = datetime.datetime.now().strftime("%Y-%m-%d-%H:%M:%S")
-    save_path = os.path.join(config_dict['save_path'], time_now)
+    save_path = os.path.join(config_dict['save_path'], config_dict['model'], time_now)
     if not os.path.exists(save_path):
         os.makedirs(save_path)
 

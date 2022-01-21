@@ -3,7 +3,7 @@
     "epochs": 10,
     "batch_size": 128,
     "device": "cuda",
-    "save_path": "/home/eric/PycharmProjects/didactic_sanity_check/model_saves/experiment_1/model1",
+    "save_path": "/home/eric/PycharmProjects/didactic_sanity_check/model_saves/experiment_1/",
     "l_r": 0.001,
 
     "model": "model2",
