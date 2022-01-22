@@ -12,8 +12,9 @@
     "noise": false,
     "false_didactic": false,
     "unique_didactic": false,
+    "fixed_didactic": false,
+    "random_labels": false,
     "padding": 9,
-
 
     "num_workers": 2,
     "pin_memory": true,
