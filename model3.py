@@ -17,11 +17,8 @@ class model3(torch.nn.Module):
 
     def forward(self, x):
         x = F.relu(self.conv1(x))
-        print(x.shape)
         x = F.relu(self.conv2(x))
-        print(x.shape)
         x = F.relu(self.conv3(x))
-        print(x.shape)
         x = torch.flatten(x, 1)
         x = F.log_softmax(self.classifier(x), dim=1)
         return(x)
