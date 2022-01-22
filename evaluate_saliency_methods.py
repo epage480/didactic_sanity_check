@@ -83,7 +83,9 @@ def main(config_file):
     test_data = dataset_MNIST.MNIST(root=config_dict['data_path'], train=False, padding=config_dict['padding'],
                                     didactic=config_dict['didactic'], noise=config_dict['noise'],
                                     unique_didactic=config_dict['unique_didactic'],
-                                    false_didactic=config_dict['false_didactic'], transform=transform)
+                                    false_didactic=config_dict['false_didactic'],
+                                    fixed_didactic=config_dict['fixed_didactic'],
+                                    random_labels=config_dict['random_labels'], transform=transform)
 
     # Define data loaders
     test_loader = torch.utils.data.DataLoader(test_data, **test_kwargs)
