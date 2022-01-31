@@ -4,9 +4,7 @@ import torch.nn.functional as F
 from torchvision import datasets, transforms
 import numpy as np
 
-# This model is meant to be the same used in this paper: https://arxiv.org/abs/1711.00867
-# It consists of 26,914,826 parameters and may be incorrect, but it does obtain the accuracy of 98.4% as described
-# in the paper, consider emailing the authors to elaborate on their architecture
+# Simple 3 Layer CNN
 class model2(torch.nn.Module):
     def __init__(self, input_shape=(1,28,28), classes=10):
         super(model2, self).__init__()

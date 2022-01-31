@@ -13,7 +13,7 @@ class model3(torch.nn.Module):
         self.conv1 = torch.nn.Conv2d(input_shape[0], 1024, kernel_size=3, stride=1, padding=0)
         self.conv2 = torch.nn.Conv2d(1024, 1024, kernel_size=3, stride=1, padding=0)
         self.conv3 = torch.nn.Conv2d(1024, 1024, kernel_size=3, stride=1, padding=0)
-        self.classifier = torch.nn.Linear(802816, classes)
+        self.classifier = torch.nn.Linear(1638400, classes)
 
     def forward(self, x):
         x = F.relu(self.conv1(x))
