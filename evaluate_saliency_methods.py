@@ -153,7 +153,8 @@ def main(config_file):
     ax[0, 5].set_title('ig', rotation=45)
 
     fig.tight_layout()
-    plt.savefig(os.path.join(config_dict['save_path'], 'evaluations_{}.png'.format(args.seed)))
+    exp = config_dict['save_path'].split('/')[-3]
+    plt.savefig(os.path.join(config_dict['save_path'], 'eval_{}_{}_{}.png'.format(exp, config_dict['model'], args.seed)))
     # plt.show()
 
 if __name__ == '__main__':
