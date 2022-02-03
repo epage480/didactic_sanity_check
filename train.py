@@ -107,13 +107,13 @@ def main(config_file):
 
     # Define datasets
     train_data = dataset_MNIST.MNIST(root=config_dict['data_path'], train=True, padding=config_dict['padding'],
-                                     didactic=config_dict['didactic'], noise=config_dict['noise'],
+                                     didactic=config_dict['didactic'], distractor=config_dict['distractor'],
                                      unique_didactic=config_dict['unique_didactic'],
                                      false_didactic=config_dict['false_didactic'],
                                      fixed_didactic=config_dict['fixed_didactic'],
                                      random_labels=config_dict['random_labels'], transform=transform)
     test_data = dataset_MNIST.MNIST(root=config_dict['data_path'], train=False, padding=config_dict['padding'],
-                                     didactic=config_dict['didactic'], noise=config_dict['noise'],
+                                     didactic=config_dict['didactic'], distractor=config_dict['distractor'],
                                      unique_didactic=config_dict['unique_didactic'],
                                      false_didactic=config_dict['false_didactic'],
                                      fixed_didactic=config_dict['fixed_didactic'],

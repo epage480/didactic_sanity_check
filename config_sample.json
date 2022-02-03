@@ -9,7 +9,7 @@
     "model": "model2",
 
     "didactic": true,
-    "noise": false,
+    "distractor": false,
     "false_didactic": false,
     "unique_didactic": false,
     "fixed_didactic": false,
